@@ -1,0 +1,12 @@
+services:
+  php:
+    volumes:
+      - .:/var/www/portfolio
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - .:/var/www/portfolio
+    depends_on:
+      - php
+    ports:
+      - "80:80"

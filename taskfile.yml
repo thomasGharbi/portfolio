@@ -1,0 +1,24 @@
+version: '3'
+
+vars:
+    ENV: "dev"
+    BASE_COMPOSE: "docker compose -f compose.yml -f compose.{{.ENV}}.yml"
+
+tasks:
+    up:
+        desc: "Démarre les containers (ajouter 'hard' pour forcer le rebuild)"
+        cmds:
+            - >
+                {{.BASE_COMPOSE}} --env-file .env.{{.ENV}} up -d {{if eq .CLI_ARGS "hard"}}--build --force-recreate --no-deps{{end}}
+
+    down:
+        desc: "Arrête et supprime les conteneurs"
+        cmds:
+            - >
+                {{.BASE_COMPOSE}} --env-file .env.{{.ENV}} down
+
+    logs:
+        desc: "Affiche les logs des services en direct"
+        cmds:
+            - >
+                {{.BASE_COMPOSE}} logs -f {{.CLI_ARGS}}
