@@ -10,3 +10,5 @@ services:
       - php
     ports:
       - "80:80"
+  node:
+    image: node:22.1-alpine

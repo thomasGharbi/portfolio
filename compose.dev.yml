@@ -5,7 +5,11 @@ services:
       dockerfile: php/Dockerfile
     ports:
       - "9000:9000"
-    entrypoint: ["sh", "/var/www/portfolio/docker/environments/dev/scripts/entrypoint.sh"]
   nginx:
     volumes:
       - ./docker/environments/dev/nginx:/etc/nginx/conf.d
+  node:
+    working_dir: /var/www/portfolio
+    entrypoint: [ "sh", "/var/www/portfolio/docker/environments/dev/node/scripts/entrypoint.sh" ]
+    volumes:
+        - .:/var/www/portfolio

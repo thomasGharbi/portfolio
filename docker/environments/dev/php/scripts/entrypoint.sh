@@ -1,8 +1,7 @@
 #!/bin/sh
+set -e
 
-#Composer
 echo "Installation des dépendances..."
 composer install
 
-#FPM
 exec php-fpm
