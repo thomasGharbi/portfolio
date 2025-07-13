@@ -3,6 +3,9 @@ services:
     build:
       context: docker/environments/dev
       dockerfile: php/Dockerfile
+      args:
+          UID: ${UID}
+          GID: ${GID}
     ports:
       - "9000:9000"
   nginx:
@@ -13,3 +16,4 @@ services:
     entrypoint: [ "sh", "/var/www/portfolio/docker/environments/dev/node/scripts/entrypoint.sh" ]
     volumes:
         - .:/var/www/portfolio
+    user: "${UID}:${GID}"
