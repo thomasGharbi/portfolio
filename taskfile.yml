@@ -5,6 +5,7 @@ vars:
     BASE_COMPOSE: "docker compose -f compose.yml -f compose.{{.ENV}}.yml"
 
 tasks:
+### BASE COMMANDS ###
     up:
         desc: "Démarre les containers (ajouter 'hard' pour forcer le rebuild)"
         cmds:
@@ -22,3 +23,24 @@ tasks:
         cmds:
             - >
                 {{.BASE_COMPOSE}} logs -f {{.CLI_ARGS}}
+
+### CLEAN CODE COMMANDS ###
+    phpstan:
+        desc: "Exécute PHPStan"
+        cmds:
+            - ./vendor/bin/phpstan analyse src --level=8
+
+    phpcs:
+        desc: "Exécute PHP CodeSniffer"
+        cmds:
+            - ./vendor/bin/phpcs --standard=PSR12 src/
+
+    phpunit:
+        desc: "Exécute PHPUnit"
+        cmds:
+            - ./vendor/bin/phpunit
+
+    check-code:
+        desc: "Exécute tous les checks de qualité de code avec GrumPHP"
+        cmds:
+            - ./vendor/bin/grumphp run
