@@ -1,16 +1,33 @@
-# 🚀 Portfolio avec Symfony, React et Webpack
+#  Projet Portfolio en Symfony 7.3 et React 19.1
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
+#### Technologies :
+
+[![PHP](https://img.shields.io/badge/PHP-8.4-blue?logo=php)](https://www.php.net/)
 [![Symfony](https://img.shields.io/badge/Symfony-7.3-000000?logo=symfony&logoColor=white)](https://symfony.com/)
 [![React](https://img.shields.io/badge/React-19.1-blue?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Webpack](https://img.shields.io/badge/Webpack-2.2-yellow?logo=webpack)](https://webpack.js.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1-blue?logo=tailwindcss)](https://tailwindcss.com/)
+[![SASS](https://img.shields.io/badge/SASS-1.8-blue?logo=sass)](https://sass-lang.com/)
+
+#### Infrastructure :
+
 [![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)](https://www.docker.com/)
 [![Taskfile](https://img.shields.io/badge/Taskfile-supported-blueviolet)](https://taskfile.dev)
-[![GrumPHP](https://img.shields.io/badge/GrumPHP-enabled-brightgreen)](https://github.com/phpro/grumphp)
 
-Ce projet est un **portfolio personnel** développé avec **Symfony 7.3**, utilisant **React**, **Webpack** et conteneurisé avec **Docker**. Il comprend une configuration multi-environnement (`dev`, `test`, etc.) et des vérifications automatisées de qualité de code via **GrumPHP**, **PHPStan**, **PHPUnit** et **PHP CodeSniffer**.
+#### Qualité & Tests :
+
+[![GrumPHP](https://img.shields.io/badge/GrumPHP-enabled-brightgreen)](https://github.com/phpro/grumphp)
+[![PHPStan](https://img.shields.io/badge/PHPStan-Level%208-blueviolet)](https://phpstan.org/)
+[![PHPCS](https://img.shields.io/badge/PHPCS-PSR12-blueviolet)](https://github.com/squizlabs/PHP_CodeSniffer)
+[![PHPUnit](https://img.shields.io/badge/PHPUnit-12-green)](https://phpunit.de/)
+
+#### License :
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org/)
 
 ---
+
 
 ## 📚 Sommaire
 
