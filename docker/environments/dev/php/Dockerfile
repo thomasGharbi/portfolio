@@ -28,5 +28,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 USER appuser
 
+ENV PATH="/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+
 EXPOSE 9000
 CMD ["php-fpm"]
