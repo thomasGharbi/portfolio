@@ -1,0 +1,26 @@
+:root {
+    --bg-color: rgba(3, 0, 20, 1);
+
+    --gradient-start: rgba(127, 0, 209, 0.2);
+    --gradient-end: rgba(111, 215, 251, 0);
+    --gradient-start-second: rgba(127, 0, 209, 0.2);
+    --gradient-end-second: rgba(111, 215, 251, 0);
+
+    --grid-line: rgba(255, 255, 255, 0.04);
+    --grid-size: 18px;
+}
+
+@layer base {
+    body {
+        background-color: var(--bg-color);
+    }
+}
+
+@layer utilities {
+    .bg-custom-grid {
+        background-image:
+            linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+        background-size: var(--grid-size) var(--grid-size);
+    }
+}
