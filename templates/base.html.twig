@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Thomas Gharbi{% endblock %}</title>
@@ -11,7 +11,9 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="min-h-screen overflow-hidden relative">
+    {% include 'partials/svg/background.svg.html.twig' %}
+    <div class="absolute inset-0 bg-custom-grid"></div>
+    {% block body %}{% endblock %}
     </body>
 </html>
