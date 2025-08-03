@@ -1,0 +1,20 @@
+{% include '@partials/svg/background.svg.twig' ignore missing %}
+<div class="absolute inset-0 bg-custom-grid" role="presentation"></div>
+
+<div class="absolute inset-0 flex items-center justify-center">
+    <figure class="relative w-full max-w-[80vw] sm:max-w-[70vw] md:max-w-[50vw] lg:max-w-[20vw] aspect-square">
+        <div class="absolute inset-0 rounded-full bg-[rgb(3,0,20)] blur-[30px] z-0"></div>
+        <picture>
+            <source srcset="{{ asset('medias/sphere.webp') }}" type="image/webp">
+            <img
+                src="{{ asset('medias/sphere.webp') }}"
+                alt="Image principale de présentation"
+                class="relative w-full h-full object-contain drop-shadow-xl z-10"
+                fetchpriority="high"
+                decoding="async"
+                loading="eager"
+            />
+        </picture>
+    </figure>
+</div>
+
