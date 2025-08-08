@@ -17,6 +17,23 @@
                     <h2 class="text-base md:text-md text-gray-400 max-w-2xl leading-relaxed font-light ml-1">
                         Développement d'applications web complètes et fonctionnelles.
                     </h2>
+                    <div class="p-1.5 overflow-visible min-w-max" style="font-size: 1.2em;">
+                        {% set strings = [
+                            'Tests automatisés (unitaires, fonctionnels, E2E).',
+                            'GitLab CI : build, test, déploiment.',
+                            'Principes SOLID implémentés.',
+                            'Implémentation Domain-Driven Design.',
+                            'Sécurité proactive (OWASP).',
+                            'Builds multi-étapes avec Docker.',
+                        ] %}
+                        <span
+                            data-controller="symfony--ux-typed"
+                            data-symfony--ux-typed-loop-value="true"
+                            data-symfony--ux-typed-show-cursor-value="true"
+                            data-symfony--ux-typed-cursor-char-value="<span class='bg-gradient-to-t from-indigo-500 to-purple-500 bg-clip-text text-transparent font-mono'>|</span>"
+                            data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
+                        ></span>
+                    </div>
                 </div>
             </article>
             <article class="w-full md:w-1/2 h-full p-8 flex flex-col justify-center items-center">
