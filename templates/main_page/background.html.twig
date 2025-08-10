@@ -1,4 +1,6 @@
 {% include '@partials/svg/background.svg.twig' ignore missing %}
+
+{% if is_desktop() %}
 <div class="absolute inset-0 bg-custom-grid" role="presentation"></div>
 
 <div class="absolute inset-0 flex items-center justify-center">
@@ -17,4 +19,5 @@
         </picture>
     </figure>
 </div>
+{% endif %}
 
