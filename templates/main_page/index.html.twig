@@ -18,12 +18,12 @@
                         Développement d'applications web complètes et fonctionnelles.
                     </h2>
                     <div class="flex flex-wrap gap-3">
-                        <div class="px-2 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">PHP</div>
-                        <div class="px-2 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">Symfony</div>
-                        <div class="px-2 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">JavaScript</div>
-                        <div class="px-2 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">React</div>
+                        <a class="pill" href="https://www.php.net/docs.php">PHP</a>
+                        <a class="pill" href="https://symfony.com/doc/current/index.html">Symfony</a>
+                        <a class="pill" href="https://developer.mozilla.org/fr/docs/Web/JavaScript">JavaScript</a>
+                        <a class="pill" href="https://react.dev">React</a>
                     </div>
-                    <div class="p-1.5 overflow-visible min-w-max" style="font-size: 1.2em;">
+                    <div class="p-1.5 overflow-visible min-w-max text-base md:text-xl">
                         {% set strings = [
                             'Tests automatisés (unitaires, fonctionnels, E2E).',
                             'GitLab CI : build, test, déploiment.',
@@ -41,36 +41,22 @@
                         ></span>
                     </div>
                     <div class="flex gap-4 flex-nowrap">
-                        <a class="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm md:text-base font-medium ring-offset-background transition-colors bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-white px-3 py-2 relative z-[10] h-[42px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                            </svg>
+                        <a class="flex-1 btn-cta">
+                            {{ include('@icons/download.svg') }}
                             Télécharger le CV
                         </a>
-                        <a class="flex-1 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm md:text-base font-medium ring-offset-background transition-colors bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-white px-3 py-2 relative z-[10] h-[42px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                            </svg>
+                        <a class="flex-1 btn-cta">
+                            {{ include('@icons/mail.svg') }}
                             Contact
                         </a>
                     </div>
                     <div class="flex flex-wrap gap-3 justify-start">
-                        <a href="https://github.com/thomasGharbi"
-                           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
-                            <svg class="w-5 h-5 fill-current text-gray-400" viewBox="0 0 496 512">
-                                <path
-                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.1 0-5.4-1.6-5.4-3.6 0-2 2.3-3.6 5.4-3.6 2.9 0 5.2 1.6 5.2 3.6zm-31.6-3.6c-2.9 0-5.2 1.6-5.2 3.6 0 2 2.3 3.6 5.2 3.6 3 0 5.3-1.6 5.3-3.6.1-2-2.2-3.6-5.3-3.6zm44.2-3.6c-2.9 0-5.2 1.6-5.2 3.6 0 2 2.3 3.6 5.2 3.6 3 0 5.3-1.6 5.3-3.6 0-2-2.3-3.6-5.3-3.6zM248 8C111 8 0 119.3 0 256c0 109.1 70.7 201.4 168.8 234.1 12.3 2.3 16.8-5.3 16.8-11.8 0-5.8-.2-21.3-.3-41.8-68.7 14.9-83.2-33.1-83.2-33.1-11.2-28.4-27.4-36-27.4-36-22.4-15.3 1.7-15 1.7-15 24.7 1.7 37.8 25.4 37.8 25.4 22 37.7 57.9 26.8 72 20.5 2.2-16 8.7-26.8 15.8-33-54.9-6.2-112.6-27.4-112.6-122.2 0-27 9.6-49.1 25.4-66.4-2.6-6.2-11-31.3 2.4-65.2 0 0 20.4-6.5 66.8 25.1 19.4-5.4 40.2-8.1 60.8-8.2 20.5 0 41.1 2.8 60.8 8.2 46.4-31.6 66.8-25.1 66.8-25.1 13.4 33.9 5 58.9 2.4 65.2 15.8 17.3 25.4 39.4 25.4 66.4 0 95.1-57.8 116-112.9 122.1 8.9 7.7 17 22.9 17 46.2 0 33.4-.3 60.4-.3 68.6 0 6.6 4.4 14.3 16.9 11.8C425.3 457.4 496 365.1 496 256 496 119.3 385 8 248 8z">
-                                </path>
-                            </svg>
+                        <a href="https://github.com/thomasGharbi" class="pill">
+                            {{ include('@icons/social/github.svg') }}
                             GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/thomas-gharbi-4b65b7186"
-                           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
-                            <svg class="w-5 h-5 fill-current text-blue-500" viewBox="0 0 448 512">
-                                <path
-                                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8 0 24.1 24.09-.5 53.79-.5s53.79 24.6 53.79 54.3c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.4V304.1c0-34.3-.7-78.4-47.8-78.4-47.8 0-55.1 37.3-55.1 75.8V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.6 42.7-48.4 87.9-48.4 94 0 111.3 61.9 111.3 142.3V448z">
-                                </path>
-                            </svg>
+                        <a href="https://www.linkedin.com/in/thomas-gharbi-4b65b7186" class="pill">
+                            {{ include('@icons/social/linkedin.svg') }}
                             LinkedIn
                         </a>
                     </div>

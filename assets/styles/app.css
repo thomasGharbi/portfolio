@@ -1,3 +1,5 @@
 @import "tailwindcss";
 @import './components/_background.scss';
+@import './components/_cta.scss';
+@import './components/_pill.scss';
 @source not "../../public/*";

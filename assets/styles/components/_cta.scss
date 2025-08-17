@@ -1,0 +1,23 @@
+:root {
+    --cta-gradient-start: #6366f1;
+    --cta-gradient-end: #d946ef;
+    --cta-text-color: #fff;
+    --cta-radius: 0.375rem;
+    --cta-padding-x: 0.75rem;
+    --cta-padding-y: 0.5rem;
+    --cta-height: 42px;
+}
+
+@layer components {
+    .btn-cta {
+        @apply inline-flex items-center justify-center gap-2 whitespace-nowrap
+        text-sm md:text-base font-medium
+        transition-colors relative z-[10];
+
+        background-image: linear-gradient(to top left, var(--cta-gradient-start), var(--cta-gradient-end));
+        color: var(--cta-text-color);
+        border-radius: var(--cta-radius);
+        padding: var(--cta-padding-y) var(--cta-padding-x);
+        height: var(--cta-height);
+    }
+}
