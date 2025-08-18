@@ -1,23 +1,32 @@
-{% include '@partials/svg/background.svg.twig' ignore missing %}
+{% include '@svg/background.svg' ignore missing %}
 
 {% if is_desktop() %}
-<div class="absolute inset-0 bg-custom-grid" role="presentation"></div>
+    <div class="absolute inset-0 bg-custom-grid" aria-hidden="true"></div>
 
-<div class="absolute inset-0 flex items-center justify-center">
-    <figure class="relative w-full max-w-[80vw] sm:max-w-[70vw] md:max-w-[50vw] lg:max-w-[20vw] aspect-square">
-        <div class="absolute inset-0 rounded-full bg-[rgb(3,0,20)] blur-[30px] z-0"></div>
-        <picture>
-            <source srcset="{{ asset('medias/sphere.webp') }}" type="image/webp">
-            <img
-                src="{{ asset('medias/sphere.webp') }}"
-                alt="Image principale de présentation"
-                class="relative w-full h-full object-contain drop-shadow-xl z-10"
-                fetchpriority="high"
-                decoding="async"
-                loading="eager"
-            />
-        </picture>
-    </figure>
-</div>
+    <div class="absolute inset-0 flex items-center justify-center" role="region" aria-label="Présentation visuelle principale">
+        <figure class="relative w-full max-w-[80vw] sm:max-w-[70vw] md:max-w-[50vw] lg:max-w-[20vw] aspect-square">
+            <div class="absolute inset-0 rounded-full bg-[rgb(3,0,20)] blur-[30px] z-0" aria-hidden="true"></div>
+            <picture>
+                <source
+                    srcset="{{ asset('medias/sphere.webp') }}"
+                    type="image/webp"
+                >
+                <source
+                    srcset="{{ asset('medias/sphere.png') }}"
+                    type="image/png"
+                >
+                <img
+                    src="{{ asset('medias/sphere.png') }}"
+                    alt="Sphère lumineuse"
+                    class="relative w-full h-full object-contain drop-shadow-xl z-10"
+                    fetchpriority="high"
+                    decoding="async"
+                    loading="eager"
+                    data-no-lazy="true"
+                />
+            </picture>
+            <figcaption class="sr-only">Sphère technologique symbolisant notre approche innovante</figcaption>
+        </figure>
+    </div>
 {% endif %}
 

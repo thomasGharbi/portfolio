@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Bienvenue sur le site officiel de Thomas Gharbi, développeur Web Back-end">
-        <meta name="robots" content="index, follow">
-        <meta name="author" content="Thomas Gharbi">
+<head>
+    {% block general_metadata %}
+        {{ include('partials/SEO/general_metadata.html.twig') }}
+    {% endblock %}
 
-        <title>{% block title %}Thomas Gharbi - Développeur Web Créatif{% endblock %}</title>
+    <title>{% block title %}Thomas Gharbi - Développeur Web Back-end Expert Symfony/PHP{% endblock %}</title>
 
-        <link rel="canonical" href="{{ app.request.uri }}">
-        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="canonical" href="{{ app.request.uri }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
+    {% block structured_data %}
+        {{ include('partials/SEO/structured_data.html.twig') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>

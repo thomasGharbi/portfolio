@@ -3,7 +3,9 @@ twig:
     paths:
         '%kernel.project_dir%/templates/partials': partials
         '%kernel.project_dir%/templates/main_page': main
-        '%kernel.project_dir%/assets/icons': icons
+        '%kernel.project_dir%/public/medias': medias
+        '%kernel.project_dir%/assets/svg': svg
+        '%kernel.project_dir%/assets/svg/icons': icons
 
 when@test:
     twig:
