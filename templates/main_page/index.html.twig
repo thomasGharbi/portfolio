@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block meta %}
-    <meta name="description" content="Développeur Back-end spécialisé Symfony/PHP, création d'applications web sécurisées, architectures SOLID, tests automatisés et CI/CD.">
+    <meta name="description" content="{{ 'meta.description'|trans }}">
 {% endblock %}
 
 {% block body %}
@@ -14,128 +14,66 @@
                 <div class="w-full md:mr-12 lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left">
                     <div class="overflow-visible min-w-max">
                         <h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-                            <span class="block bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">Développeur</span>
-                            <span class="block mt-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Back-end</span>
+                            <span class="block bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                {{ 'banner.title.line1'|trans }}
+                            </span>
+                            <span class="block mt-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+                                {{ 'banner.title.line2'|trans }}
+                            </span>
                         </h1>
                     </div>
                     <p class="text-base md:text-md text-gray-400 max-w-2xl leading-relaxed font-light ml-1">
-                        Développement d'applications web complètes et fonctionnelles.
+                        {{ 'banner.subtitle'|trans }}
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a class="pill" href="https://www.php.net/docs.php">PHP</a>
-                        <a class="pill" href="https://symfony.com/doc/current/index.html">Symfony</a>
-                        <a class="pill" href="https://developer.mozilla.org/fr/docs/Web/JavaScript">JavaScript</a>
-                        <a class="pill" href="https://react.dev">React</a>
-                    </div>
                     <div class="p-1.5 overflow-visible min-w-max text-base md:text-xl">
-                        {% set strings = [
-                            'Tests automatisés (unitaires, fonctionnels, E2E).',
-                            'GitLab CI : build, test, déploiment.',
-                            'Principes SOLID implémentés.',
-                            'Implémentation Domain-Driven Design.',
-                            'Sécurité proactive (OWASP).',
-                            'Builds multi-étapes avec Docker.',
+                        {% set messages = [
+                            'banner.typed.0'|trans,
+                            'banner.typed.1'|trans,
+                            'banner.typed.2'|trans,
+                            'banner.typed.3'|trans,
+                            'banner.typed.4'|trans,
+                            'banner.typed.5'|trans
                         ] %}
                         <span
                             data-controller="symfony--ux-typed"
                             data-symfony--ux-typed-loop-value="true"
                             data-symfony--ux-typed-show-cursor-value="true"
                             data-symfony--ux-typed-cursor-char-value="<span class='bg-gradient-to-t from-indigo-500 to-purple-500 bg-clip-text text-transparent font-mono'>|</span>"
-                            data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
+                            data-symfony--ux-typed-strings-value="{{ messages|json_encode|e('html_attr') }}"
                         ></span>
                     </div>
                     <div class="flex gap-4 flex-nowrap">
                         <a class="flex-1 btn-cta" download>
                             {{ ux_icon('lucide:download', {class: 'size-4'}) }}
-                            Télécharger mon CV
+                            {{ 'banner.cta.cv'|trans }}
                         </a>
                         <a class="flex-1 btn-cta">
                             {{ ux_icon('lucide:mail', {class: 'size-4'}) }}
-                            Contactez-moi
+                            {{ 'banner.cta.contact'|trans }}
                         </a>
                     </div>
-
                     <div class="flex flex-wrap gap-3 justify-start">
                         <a href="https://github.com/thomasGharbi" class="pill" rel="noopener noreferrer">
-                            <twig:icon name="social/github" class="w-12 h-5 fill-current text-gray-400" />
-                            GitHub
+                            <twig:icon name="social/github" class="h-5 fill-current text-indigo-500" />
+                            {{ 'social.github'|trans }}
                         </a>
                         <a href="https://www.linkedin.com/in/thomas-gharbi-4b65b7186" class="pill" rel="noopener noreferrer">
-                            <twig:icon name="social/linkedin" class="w-12 h-5 fill-current text-indigo-500" />
-                            LinkedIn
+                            <twig:icon name="social/linkedin" class="h-5 fill-current text-indigo-500" />
+                            {{ 'social.linkedin'|trans }}
                         </a>
                     </div>
                 </div>
             </article>
             <article class="w-full px-6 flex justify-center items-center h-screen">
                 <div class="md:ml-12 grid grid-cols-3 xl:grid-cols-4 gap-4">
-                    <a href="https://www.php.net" target="_blank" title="PHP (Backend)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/php" class="w-12"/>
-                    </a>
-                    <a href="https://symfony.com" target="_blank" title="Symfony Framework"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/symfony" class="w-12 text-indigo-500"/>
-                    </a>
-                    <a href="https://sylius.com" target="_blank" title="Sylius (E-commerce)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/sylius" class="w-12"/>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                       target="_blank" title="JavaScript (Frontend)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/javascript" class="w-12"/>
-                    </a>
-                    <a href="https://www.typescriptlang.org" target="_blank" title="TypeScript"
-                       class="card justify-center  hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/typescript" class="w-12"/>
-                    </a>
-                    <a href="https://react.dev" target="_blank" title="React.js"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/react" class="w-12"/>
-                    </a>
-                    <a href="https://nextjs.org" target="_blank" title="Next.js Framework"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/nextjs" class="w-12"/>
-                    </a>
-                    <a href="https://www.python.org" target="_blank" title="Python"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/python" class="w-12"/>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-                       target="_blank" title="HTML5"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/html5" class="w-12"/>
-                    </a>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                       target="_blank" title="CSS3"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/css3" class="w-12"/>
-                    </a>
-                    <a href="https://www.mysql.com" target="_blank" title="MySQL (RDBMS)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/mysql" class="w-12"/>
-                    </a>
-                    <a href="https://redis.io" target="_blank" title="Redis (In-Memory DB)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/redis" class="w-12"/>
-                    </a>
-                    <a href="https://www.postgresql.org" target="_blank" title="PostgreSQL (RDBMS)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/postgresql" class="w-12"/>
-                    </a>
-                    <a href="https://www.docker.com" target="_blank" title="Docker"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/docker" class="w-12"/>
-                    </a>
-                    <a href="https://kubernetes.io" target="_blank" title="Kubernetes (Orchestration)"
-                       class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/k8s" class="w-12"/>
-                    </a>
-                    <a href="https://www.linux.org" target="_blank" title="Linux OS"
-                       class="hidden xl:block card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out">
-                        <twig:icon name="skills/linux" class="w-12"/>
-                    </a>
+                    {% for skill in get_skills() %}
+                        <a href="{{ skill.url|trans }}"
+                           target="_blank"
+                           title="{{ skill.title|trans }}"
+                           class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out {{ loop.last ? 'hidden xl:block' : '' }}">
+                            <twig:icon name="skills/{{ skill.key }}" class="w-10"/>
+                        </a>
+                    {% endfor %}
                 </div>
             </article>
         </section>
