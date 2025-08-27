@@ -1,30 +1,29 @@
 {# ===== Métadonnées de base ===== #}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta name="description" content="Thomas Gharbi - Développeur Web Back-end spécialisé Symfony/PHP. Création d'applications web performantes, sécurisées avec architecture DDD et tests automatisés.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Thomas Gharbi">
+<meta name="description" content="{{ 'seo.base.description'|trans }}">
+<meta name="robots" content="{{ 'seo.base.robots'|trans }}">
+<meta name="author" content="{{ 'seo.base.author'|trans }}">
 
-{# ===== OpenGraph (Facebook/LinkedIn/General) ===== #}
+{# ===== OpenGraph ===== #}
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Portfolio Thomas Gharbi">
+<meta property="og:site_name" content="{{ 'seo.base.og.site_name'|trans }}">
 <meta property="og:url" content="{{ app.request.uri }}">
-<meta property="og:title" content="Thomas Gharbi - Développeur Web Back-end Symfony/PHP">
-<meta property="og:description" content="Développement d'applications web performantes avec Symfony, PHP et architectures DDD">
+<meta property="og:title" content="{{ 'seo.base.og.title'|trans }}">
+<meta property="og:description" content="{{ 'seo.base.og.description'|trans }}">
 <meta property="og:image" content="{{ absolute_url(asset('medias/social/social-preview-og.webp')) }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Thomas Gharbi - Développeur Symfony Back-End">
+<meta property="og:image:alt" content="{{ 'seo.base.og.image_alt'|trans }}">
 
 {# ===== Twitter/X ===== #}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Thomas Gharbi - Développeur Web Back-end Symfony/PHP">
-<meta name="twitter:description" content="Expert en développement Symfony/PHP avec approche DDD et tests automatisés">
+<meta name="twitter:title" content="{{ 'seo.base.twitter.title'|trans }}">
+<meta name="twitter:description" content="{{ 'seo.base.twitter.description'|trans }}">
 <meta name="twitter:image" content="{{ absolute_url(asset('medias/social/social-preview-og.webp')) }}">
 
 {# ===== Reddit ===== #}
 <meta name="reddit:domain" content="{{ app.request.host }}">
 <meta property="reddit:timestamp" content="{{ "now"|date('U') }}">
-<meta name="reddit:title" content="Thomas Gharbi - Développeur Symfony Back-End">
-<meta name="reddit:image" content="{{ absolute_url(asset('@medias/social/social-preview-og.webp')) }}">
-
+<meta name="reddit:title" content="{{ 'seo.base.reddit.title'|trans }}">
+<meta name="reddit:image" content="{{ absolute_url(asset('medias/social/social-preview-og.webp')) }}">

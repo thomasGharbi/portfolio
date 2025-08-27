@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block meta %}
-    <meta name="description" content="Développeur Back-end spécialisé Symfony/PHP, création d'applications web sécurisées, architectures SOLID, tests automatisés et CI/CD.">
+    <meta name="description" content="{{ 'meta.description'|trans }}">
 {% endblock %}
 
 {% block body %}
@@ -9,66 +9,72 @@
         {% include '@main/background.html.twig' %}
     </aside>
     <main class="relative z-10 w-full min-h-screen text-white flex flex-col">
-        <section class="flex flex-col md:flex-row h-[100vh]">
-            <article class="w-full md:w-1/2 h-full p-8 flex flex-col justify-center items-center">
-                <div class="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left">
+        <section class="flex flex-col md:flex-row">
+            <article class="w-full px-6 flex flex-col justify-center items-center h-screen">
+                <div class="w-full md:mr-12 lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left">
                     <div class="overflow-visible min-w-max">
                         <h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-                            <span class="block bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">Développeur</span>
-                            <span class="block mt-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Back-end</span>
+                            <span class="block bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                                {{ 'banner.title.line1'|trans }}
+                            </span>
+                            <span class="block mt-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+                                {{ 'banner.title.line2'|trans }}
+                            </span>
                         </h1>
                     </div>
                     <p class="text-base md:text-md text-gray-400 max-w-2xl leading-relaxed font-light ml-1">
-                        Développement d'applications web complètes et fonctionnelles.
+                        {{ 'banner.subtitle'|trans }}
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a class="pill" href="https://www.php.net/docs.php">PHP</a>
-                        <a class="pill" href="https://symfony.com/doc/current/index.html">Symfony</a>
-                        <a class="pill" href="https://developer.mozilla.org/fr/docs/Web/JavaScript">JavaScript</a>
-                        <a class="pill" href="https://react.dev">React</a>
-                    </div>
                     <div class="p-1.5 overflow-visible min-w-max text-base md:text-xl">
-                        {% set strings = [
-                            'Tests automatisés (unitaires, fonctionnels, E2E).',
-                            'GitLab CI : build, test, déploiment.',
-                            'Principes SOLID implémentés.',
-                            'Implémentation Domain-Driven Design.',
-                            'Sécurité proactive (OWASP).',
-                            'Builds multi-étapes avec Docker.',
+                        {% set messages = [
+                            'banner.typed.0'|trans,
+                            'banner.typed.1'|trans,
+                            'banner.typed.2'|trans,
+                            'banner.typed.3'|trans,
+                            'banner.typed.4'|trans,
+                            'banner.typed.5'|trans
                         ] %}
                         <span
                             data-controller="symfony--ux-typed"
                             data-symfony--ux-typed-loop-value="true"
                             data-symfony--ux-typed-show-cursor-value="true"
                             data-symfony--ux-typed-cursor-char-value="<span class='bg-gradient-to-t from-indigo-500 to-purple-500 bg-clip-text text-transparent font-mono'>|</span>"
-                            data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
+                            data-symfony--ux-typed-strings-value="{{ messages|json_encode|e('html_attr') }}"
                         ></span>
                     </div>
                     <div class="flex gap-4 flex-nowrap">
-                        <a class="flex-1 btn-cta" download>
-                            {{ ux_icon('lucide:download', {class: 'size-6'}) }}
-                            Télécharger mon CV
+                        <a href="{{ asset('download/cv_Thomas_Gharbi_anonym.pdf') }}" class="flex-1 btn-cta" download>
+                            {{ ux_icon('lucide:download', {class: 'size-4'}) }}
+                            {{ 'banner.cta.cv'|trans }}
                         </a>
                         <a class="flex-1 btn-cta">
-                            {{ ux_icon('lucide:mail', {class: 'size-6'}) }}
-                            Contactez-moi
+                            {{ ux_icon('lucide:mail', {class: 'size-4'}) }}
+                            {{ 'banner.cta.contact'|trans }}
                         </a>
                     </div>
-
                     <div class="flex flex-wrap gap-3 justify-start">
                         <a href="https://github.com/thomasGharbi" class="pill" rel="noopener noreferrer">
-                            {{ include('@icons/social/github.svg') }}
-                            GitHub
+                            <twig:icon name="social/github" class="h-5 fill-current text-indigo-500" />
+                            {{ 'social.github'|trans }}
                         </a>
                         <a href="https://www.linkedin.com/in/thomas-gharbi-4b65b7186" class="pill" rel="noopener noreferrer">
-                            {{ include('@icons/social/linkedin.svg') }}
-                            LinkedIn
+                            <twig:icon name="social/linkedin" class="h-5 fill-current text-indigo-500" />
+                            {{ 'social.linkedin'|trans }}
                         </a>
                     </div>
                 </div>
             </article>
-            <article class="w-full md:w-1/2 h-full p-8 flex flex-col justify-center items-center">
-{#                Right content#}
+            <article class="w-full px-6 flex justify-center items-center h-screen">
+                <div class="md:ml-12 grid grid-cols-3 xl:grid-cols-4 gap-4">
+                    {% for skill in get_skills() %}
+                        <a href="{{ skill.url|trans }}"
+                           target="_blank"
+                           title="{{ skill.title|trans }}"
+                           class="card hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out {{ loop.last ? 'hidden xl:block' : '' }}">
+                            <twig:icon name="skills/{{ skill.key }}" class="w-10"/>
+                        </a>
+                    {% endfor %}
+                </div>
             </article>
         </section>
     </main>

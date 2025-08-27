@@ -1,0 +1,94 @@
+seo:
+    main_page:
+        description: "Développeur Back-end spécialisé Symfony/PHP, création d'applications web sécurisées, architectures SOLID, tests automatisés et CI/CD."
+    base:
+        description: "Thomas Gharbi - Développeur Web Back-end spécialisé Symfony/PHP. Création d'applications web performantes, sécurisées avec architecture DDD et tests automatisés."
+        author: "Thomas Gharbi"
+        robots: "index, follow"
+
+        og:
+            site_name: "Portfolio Thomas Gharbi"
+            title: "Thomas Gharbi - Développeur Web Back-end Symfony/PHP"
+            description: "Développement d'applications web performantes avec Symfony, PHP et architectures DDD"
+            image_alt: "Thomas Gharbi - Développeur Symfony Back-End"
+
+        twitter:
+            title: "Thomas Gharbi - Développeur Web Back-end Symfony/PHP"
+            description: "Expert en développement Symfony/PHP avec approche DDD et tests automatisés"
+
+        reddit:
+            title: "Thomas Gharbi - Développeur Symfony Back-End"
+
+base:
+    title: "Thomas Gharbi - Développeur Web Back-end Expert Symfony/PHP"
+    subtitle: "Développeur Web Back-end"
+
+
+banner:
+    title:
+        line1: "Développeur"
+        line2: "Back-end"
+    subtitle: "Développement d'applications web complètes et fonctionnelles."
+    typed:
+        - "Tests automatisés (unitaires, fonctionnels, E2E)."
+        - "GitLab CI : build, test, déploiement."
+        - "Principes SOLID implémentés."
+        - "Implémentation Domain-Driven Design."
+        - "Sécurité proactive (OWASP)."
+        - "Builds multi-étapes avec Docker."
+    cta:
+        cv: "Télécharger mon CV"
+        contact: "Contactez-moi"
+social:
+    github: "GitHub"
+    linkedin: "LinkedIn"
+
+skills:
+    php:
+        title: "PHP (Backend)"
+        url: "https://www.php.net"
+    symfony:
+        title: "Symfony Framework"
+        url: "https://symfony.com"
+    sylius:
+        title: "Sylius (E-commerce)"
+        url: "https://sylius.com"
+    javascript:
+        title: "JavaScript (Frontend)"
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    typescript:
+        title: "TypeScript"
+        url: "https://www.typescriptlang.org"
+    react:
+        title: "React.js"
+        url: "https://react.dev"
+    nextjs:
+        title: "Next.js Framework"
+        url: "https://nextjs.org"
+    python:
+        title: "Python"
+        url: "https://www.python.org"
+    html5:
+        title: "HTML5"
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    css3:
+        title: "CSS3"
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    mysql:
+        title: "MySQL (RDBMS)"
+        url: "https://www.mysql.com"
+    redis:
+        title: "Redis (In-Memory DB)"
+        url: "https://redis.io"
+    postgresql:
+        title: "PostgreSQL (RDBMS)"
+        url: "https://www.postgresql.org"
+    docker:
+        title: "Docker"
+        url: "https://www.docker.com"
+    kubernetes:
+        title: "Kubernetes (Orchestration)"
+        url: "https://kubernetes.io"
+    linux:
+        title: "Linux OS"
+        url: "https://www.linux.org"

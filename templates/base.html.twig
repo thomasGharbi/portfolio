@@ -5,7 +5,7 @@
         {{ include('partials/SEO/general_metadata.html.twig') }}
     {% endblock %}
 
-    <title>{% block title %}Thomas Gharbi - Développeur Web Back-end Expert Symfony/PHP{% endblock %}</title>
+    <title>{% block title 'base.title'|trans %}</title>
 
     <link rel="canonical" href="{{ app.request.uri }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
