@@ -1,7 +1,7 @@
 grumphp:
     tasks:
         phpcs:
-            standard: PSR12
+            standard: phpcs.xml.dist
         phpstan:
             configuration: phpstan.dist.neon
         phpunit:
