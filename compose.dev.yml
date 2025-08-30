@@ -17,3 +17,14 @@ services:
     volumes:
         - .:/var/www/portfolio
     user: "${UID}:${GID}"
+
+  postgresql:
+    image: postgres:17.6-alpine3.22
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql/data
