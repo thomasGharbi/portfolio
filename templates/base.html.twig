@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     {% block general_metadata %}
         {{ include('partials/SEO/general_metadata.html.twig') }}
@@ -19,6 +19,7 @@
     {% endblock %}
 </head>
 <body>
+{% include 'partials/_flash_messages.html.twig' %}
 {% block body %}{% endblock %}
 
 {% block javascripts %}

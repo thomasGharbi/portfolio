@@ -10,10 +10,12 @@
 
     <rule ref="PSR12"/>
 
-    <file>bin/</file>
-    <file>config/</file>
-    <file>public/</file>
-    <file>src/</file>
-    <file>tests/</file>
+    <file>.</file>
+
+    <exclude-pattern>migrations/*</exclude-pattern>
+    <exclude-pattern>var/*</exclude-pattern>
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>node_modules/*</exclude-pattern>
+    <exclude-pattern>public/bundles/*</exclude-pattern>
 
 </ruleset>

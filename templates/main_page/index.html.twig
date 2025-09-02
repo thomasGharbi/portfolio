@@ -47,7 +47,7 @@
                             {{ ux_icon('lucide:download', {class: 'size-4'}) }}
                             {{ 'banner.cta.cv'|trans }}
                         </a>
-                        <a class="flex-1 btn-cta">
+                        <a href="#container_contact_message" class="flex-1 btn-cta">
                             {{ ux_icon('lucide:mail', {class: 'size-4'}) }}
                             {{ 'banner.cta.contact'|trans }}
                         </a>
@@ -76,6 +76,68 @@
                     {% endfor %}
                 </div>
             </article>
+        </section>
+        <section class="flex justify-center min-h-screen py-20">
+            <div class="w-full md:w-1/2">
+                {{ form_start(form_contact, {attr: {
+                    'data-turbo': 'false',
+                    class: 'bg-white/10 backdrop-blur mx-5 md:mx-0 p-8 rounded-2xl border border-white/20 space-y-6'
+                }}) }}
+                {{ form_errors(form_contact) }}
+                <div class="relative group">
+                    {{ ux_icon('lucide:circle-user', {class: 'absolute left-4 top-5 w-5 h-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors'}) }}
+                    {{ form_widget(form_contact.name, {
+                        attr: {
+                            autocomplete: 'off',
+                            placeholder: 'Votre Nom',
+                            class: 'form-input'
+                        }
+                    }) }}
+                    {% if form_contact.name.vars.errors|length > 0 %}
+                        <div class="mt-2 flex items-start text-red-500 text-sm">
+                            {{ ux_icon('lucide:alert-circle', {class: 'w-4 h-4 mr-2 mt-0.5 flex-shrink-0'}) }}
+                            {{ form_errors(form_contact.name) }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="relative group">
+                    {{ ux_icon('lucide:mail', {class: 'absolute left-4 top-5 w-5 h-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors'}) }}
+                    {{ form_widget(form_contact.email, {
+                        attr: {
+                            autocomplete: 'off',
+                            placeholder: 'Votre Email',
+                            class: 'form-input'
+                        }
+                    }) }}
+                    {% if form_contact.email.vars.errors|length > 0 %}
+                        <div class="mt-2 flex items-start text-red-500 text-sm">
+                            {{ ux_icon('lucide:alert-circle', {class: 'w-4 h-4 mr-2 mt-0.5 flex-shrink-0'}) }}
+                            {{ form_errors(form_contact.email) }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div id="container_contact_message" class="relative group">
+                    {{ ux_icon('lucide:message-square', {class: 'absolute left-4 top-5 w-5 h-5 text-gray-400 group-focus-within:text-indigo-500 transition-colors'}) }}
+                    {{ form_widget(form_contact.message, {
+                        attr: {
+                            placeholder: 'Votre Message',
+                            class: 'form-input h-40 resize-y',
+                            rows: 10
+                        }
+                    }) }}
+                    {% if form_contact.message.vars.errors|length > 0 %}
+                        <div class="mt-2 flex items-start text-red-500 text-sm">
+                            {{ ux_icon('lucide:alert-circle', {class: 'w-4 h-4 mr-2 mt-0.5 flex-shrink-0'}) }}
+                            {{ form_errors(form_contact.message) }}
+                        </div>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn-cta w-full cursor-pointer">
+                    {{ ux_icon('lucide:send', {class: 'size-5'}) }}
+                    Envoyer le message
+                </button>
+                {{ form_end(form_contact) }}
+            </div>
         </section>
     </main>
 {% endblock %}

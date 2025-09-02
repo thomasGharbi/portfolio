@@ -1,0 +1,34 @@
+@layer components {
+    .form-input {
+        --form-bg: theme('colors.white / 0.1');
+        --form-text: theme('colors.white');
+        --form-placeholder: theme('colors.gray.400');
+        --form-border: theme('colors.white / 0.2');
+        --form-radius: theme('borderRadius.xl');
+        --form-padding-x: 3rem;
+        --form-padding-y: 1rem;
+        --form-text-size: theme('fontSize.lg');
+        --form-focus-bg: theme('colors.purple.100');
+        --form-focus-text: theme('colors.indigo.500');
+        --form-focus-ring: theme('colors.purple.500 / 0.5');
+
+        @apply w-full transition duration-300 outline-none border;
+
+        background-color: var(--form-bg);
+        color: var(--form-text);
+        border-color: var(--form-border);
+        border-radius: var(--form-radius);
+        padding: var(--form-padding-y) var(--form-padding-x);
+        font-size: var(--form-text-size);
+
+        &::placeholder {
+            color: var(--form-placeholder);
+        }
+
+        &:focus {
+            background-color: var(--form-focus-bg);
+            color: var(--form-focus-text);
+            box-shadow: 0 0 0 2px var(--form-focus-ring);
+        }
+    }
+}
