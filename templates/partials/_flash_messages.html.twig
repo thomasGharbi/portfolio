@@ -1,0 +1,20 @@
+<div class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
+    {% for type, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-toast flash-{{ type }}" role="alert">
+                <div class="flash-icon">
+                    {% if type == 'success' %}
+                        {{ ux_icon('lucide:circle-check', {class: 'size-5'}) }}
+                    {% elseif type == 'error' %}
+                        {{ ux_icon('lucide:circle-x', {class: 'size-5'}) }}
+                    {% elseif type == 'warning' %}
+                        {{ ux_icon('lucide:circle-alert', {class: 'size-5'}) }}
+                    {% else %}
+                        {{ ux_icon('lucide:circle-dashed', {class: 'size-5'}) }}
+                    {% endif %}
+                </div>
+                <div class="flash-content">{{ message }}</div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

@@ -20,13 +20,26 @@ final class MainPageController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($contact);
-            $em->flush();
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                try {
+                    $em->persist($contact);
+                    $em->flush();
 
-            $this->addFlash('success', 'Votre message a bien été envoyé !');
+                    $this->addFlash('success', 'Votre message a bien été envoyé !');
 
-            return $this->redirectToRoute('app_main_page', ['#container_contact_message']);
+                    return $this->redirectToRoute('app_main_page', ['_fragment' => 'container_contact_message']);
+                } catch (\Exception $e) {
+                    $this->addFlash(
+                        'error',
+                        'Une erreur technique s\'est produite. Veuillez réessayer ultérieurement.'
+                    );
+                }
+            } else {
+                foreach ($form->getErrors(true) as $error) {
+                    $this->addFlash('warning', $error->getMessage());
+                }
+            }
         }
 
         return $this->render('main_page/index.html.twig', [
