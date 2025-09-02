@@ -3,4 +3,5 @@
 @import './components/_cta.scss';
 @import './components/_pill.scss';
 @import './components/_card.scss';
+@import './components/_input.scss';
 @source not "../../public/*";
