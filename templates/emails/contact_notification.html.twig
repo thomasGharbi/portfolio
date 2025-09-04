@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau message de contact</title>
+</head>
+<body>
+<h2>Nouveau message de contact</h2>
+
+<p><strong>Nom :</strong> {{ contact.name }}</p>
+<p><strong>Email :</strong> {{ contact.email }}</p>
+
+<p><strong>Message :</strong></p>
+<div style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #007bff;">
+    {{ contact.message|nl2br }}
+</div>
+
+<p><em>Message reçu le {{ contact.createdAt|date('d/m/Y à H:i') }}</em></p>
+</body>
+</html>
