@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Service\EmailNotificationService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +14,11 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MainPageController extends AbstractController
 {
     #[Route('/', name: 'app_main_page')]
-    public function index(Request $request, EntityManagerInterface $em): Response
-    {
+    public function index(
+        Request $request,
+        EntityManagerInterface $em,
+        EmailNotificationService $emailService
+    ): Response {
         $contact = new Contact();
 
         $form = $this->createForm(ContactType::class, $contact);
@@ -25,6 +29,8 @@ final class MainPageController extends AbstractController
                 try {
                     $em->persist($contact);
                     $em->flush();
+
+                    $emailService->notifyContact($contact);
 
                     $this->addFlash('success', 'Votre message a bien été envoyé !');
 
